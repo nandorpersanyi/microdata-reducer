@@ -1,9 +1,9 @@
-# London Crime Dashboard
+# Suade Microdata Reducer
 
-[http://web.nandorpersanyi.com/london-crime-dashboard/](http://web.nandorpersanyi.com/london-crime-dashboard/ "London Crime Dashboard")
+[http://web.nandorpersanyi.com/suade-microdata-reducer/](http://web.nandorpersanyi.com/suade-microdata-reducer/ "Suade Microdata Reducer")
 
-- username: london
-- password: crime1234
+- username: suade
+- password: microdatareducer
 
 ## Build & development
 
