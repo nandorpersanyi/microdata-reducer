@@ -1,15 +1,5 @@
  <div id="chart-wrap">
-	 <suadecharts class="charts" id="chart0" charttype="chart0.charttype" chartid="chart0.chartid" chartkey="chart0.chartkey" width=525 height=250 xscale="chart0.xscale" xscalesort="chart0.xscalesort" xscaledomain="chart0.xscaledomain" centerbar="chart0.centerbar" event="chart0.event" eventfunc="chart0.eventfunc" ticknum="chart0.ticknum" tickswitchfunc="chart0.tickswitchfunc" positionlabel="chart0.positionlabel" switchtitle="chart0.switchtitle">
-	    <h3></h3>
+	 <suadecharts ng-repeat="(key, value) in dataMeta.identifiers" chartid="{{key}}" charttype="chart" class="charts" id="chart{{key}}">
 	</suadecharts>
-	<suadecharts class="charts" id="chart1" charttype="chart1.charttype" chartid="chart1.chartid" chartkey="chart1.chartkey" width=525 height=250 xscale="chart1.xscale" xscalesort="chart1.xscalesort" xscaledomain="chart1.xscaledomain" centerbar="chart1.centerbar" event="chart1.event" eventfunc="chart1.eventfunc" ticknum="chart1.ticknum" tickswitchfunc="chart1.tickswitchfunc" positionlabel="chart1.positionlabel" switchtitle="chart1.switchtitle">
-	</suadecharts>
-	<suadecharts class="charts" id="chart2" charttype="chart2.charttype" chartid="chart2.chartid" chartkey="chart2.chartkey" width=525 height=250 xscale="chart2.xscale" xscalesort="chart2.xscalesort" xscaledomain="chart2.xscaledomain" centerbar="chart2.centerbar" event="chart2.event" eventfunc="chart2.eventfunc" ticknum="chart2.ticknum" tickswitchfunc="chart2.tickswitchfunc" positionlabel="chart2.positionlabel" switchtitle="chart2.switchtitle">
-	</suadecharts>
-	<suadecharts class="charts datatable" id="dataTable0" charttype="dataTable0.charttype" chartid="dataTable0.chartid" chartkey="dataTable0.chartkey" width=525 height=250 xscale="dataTable0.xscale" xscalesort="dataTable0.xscalesort" xscaledomain="dataTable0.xscaledomain" centerbar="dataTable0.centerbar" event="dataTable0.event" eventfunc="dataTable0.eventfunc" ticknum="dataTable0.ticknum" tickswitchfunc="dataTable0.tickswitchfunc" positionlabel="dataTable0.positionlabel" switchtitle="dataTable0.switchtitle">
-	</suadecharts>
-	<suadecharts class="charts datatable" id="dataTable1" charttype="dataTable1.charttype" chartid="dataTable1.chartid" chartkey="dataTable1.chartkey" width=525 height=250 xscale="dataTable1.xscale" xscalesort="dataTable1.xscalesort" xscaledomain="dataTable1.xscaledomain" centerbar="dataTable1.centerbar" event="dataTable1.event" eventfunc="dataTable1.eventfunc" ticknum="dataTable1.ticknum" tickswitchfunc="dataTable1.tickswitchfunc" positionlabel="dataTable1.positionlabel" switchtitle="dataTable1.switchtitle">
-	</suadecharts>
-	<suadecharts class="charts datatable" id="dataTable2" charttype="dataTable2.charttype" chartid="dataTable2.chartid" chartkey="dataTable2.chartkey" width=525 height=250 xscale="dataTable2.xscale" xscalesort="dataTable2.xscalesort" xscaledomain="dataTable2.xscaledomain" centerbar="dataTable2.centerbar" event="dataTable2.event" eventfunc="dataTable2.eventfunc" ticknum="dataTable2.ticknum" tickswitchfunc="dataTable2.tickswitchfunc" positionlabel="dataTable2.positionlabel" switchtitle="dataTable2.switchtitle">
-	</suadecharts>
+	<suadecharts ng-repeat="(key, value) in dataMeta.identifiers" chartid="{{key}}" charttype="dataTable" class="charts datatable" id="data-table{{key}}">
 </div>

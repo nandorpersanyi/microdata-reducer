@@ -1,53 +1,41 @@
 'use strict';
 
 angular.module('suadeApp')
-.directive('suadecharts', ['$rootScope', function($rootScope) {
+.directive('suadecharts', ['$rootScope','$timeout', function($rootScope,$timeout) {
     return {
         restrict: 'E',
-        scope: {
-            charttype: '=',
-            chartid: '=',
-            chartkey: '=',
-            width: '=',
-            height: '=',
-            xscale: '=',
-            xscalesort: '=',
-            xscaledomain: '=',
-            centerbar: '=',
-            event: '=',
-            eventfunc: '=',
-            ticknum: '=',
-            tickswitchfunc: '=',
-            positionlabel: '=',
-            switchtitle: '='
-        },
         link: function($scope, $element, $attrs) {
             
+            var chartid = Number($attrs.chartid);
+            var charttype = $attrs.charttype;
+
+            $element[0].id = $attrs.id;
+
             initiateCharts();
 
             function initiateCharts(){
                 // If charts were already set, dispose crossfilter's old chart dimension objects, and set the new ones
-                if($rootScope[$scope.chartkey])
-                    $rootScope[$scope.chartkey].disposeChartDimension();
+                if($rootScope[$attrs.id])
+                    $rootScope[$attrs.id].disposeChartDimension();
                 // Create chart object
-                $rootScope[$scope.chartkey] = new createChart(
-                    $scope.charttype,
-                    $scope.chartid,
-                    $scope.chartkey,
-                    $scope.width,
-                    $scope.height,
-                    $scope.xscale,
-                    $scope.xscalesort,
-                    $scope.xscaledomain,
-                    $scope.centerbar,
-                    $scope.event,
-                    $scope.eventfunc,
-                    $scope.ticknum,
-                    $scope.tickswitchfunc,
-                    $scope.positionlabel,
-                    $scope.switchtitle);
+                $rootScope[$attrs.id] = new createChart(
+                    $scope[charttype][chartid].charttype,
+                    $scope[charttype][chartid].chartid,
+                    $scope[charttype][chartid].chartkey,
+                    $scope[charttype][chartid].width,
+                    $scope[charttype][chartid].height,
+                    $scope[charttype][chartid].xscale,
+                    $scope[charttype][chartid].xscalesort,
+                    $scope[charttype][chartid].xscaledomain,
+                    $scope[charttype][chartid].centerbar,
+                    $scope[charttype][chartid].event,
+                    $scope[charttype][chartid].eventfunc,
+                    $scope[charttype][chartid].ticknum,
+                    $scope[charttype][chartid].tickswitchfunc,
+                    $scope[charttype][chartid].positionlabel,
+                    $scope[charttype][chartid].switchtitle);
 
-                $rootScope[$scope.chartkey].getChartObj().render();
+                $rootScope[$attrs.id].getChartObj().render();
             }
 
             //Chart constructor
@@ -71,16 +59,16 @@ angular.module('suadeApp')
                 if(chartType === 'bar' || chartType === 'pie'){
                     chartVar.group(snap_to_zero(groupDimensionVal(chartDimension)));
                 } else if(chartType === 'table'){
-                    chartVar.group(function (p) { console.log(p); return p.key });
+                    chartVar.group(function (p) { return p.key });
                 }
                 if(chartType === 'table'){
                     chartVar.columns([
                         function(d) { return d.value; }
                     ]);
                     chartVar
-                        .sortBy(function (d) { console.log(d); return d.key })
+                        .sortBy(function (d) { return d.key })
                         .size(50)
-                        .sortBy(function (d) { console.log(d); return d.key })
+                        .sortBy(function (d) { return d.key })
                         .order(d3.descending)
                 }
                 if(xScale === 'ordinal' && !xScaleSort){

@@ -58,9 +58,24 @@ ul{
       margin: 50px;
       padding: 50px;
       text-align: center;
+      span{
+        display: block;
+        padding:10px;
+      }
+      ol li{
+        text-align: left;
+      }
+      .upload-text{
+        font-weight: bolder;
+      }
       #github-logo{
         display: block;
         width:50px;
+        margin: 0px auto;
+      }
+      #microdata-example{
+        display: block;
+        width:500px;
         margin: 0px auto;
       }
     }

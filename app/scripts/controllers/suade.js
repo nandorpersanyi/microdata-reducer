@@ -9,12 +9,13 @@
  */
 angular.module('suadeApp')
 .controller('SuadeController', function ($rootScope,$scope) {
+    $scope.chart = [];
+    $scope.dataTable = [];
 
     $rootScope.dataMeta.identifiers.forEach(function(elem,index){
-        var chartId = 'chart' + index;
-        $scope[chartId] = {
+        $scope.chart[index] = {
             charttype: 'bar',
-            chartid:'#' + chartId,
+            chartid:'#chart' + index,
             chartkey:elem,
             xscale:'ordinal',
             xscalesort:null,
@@ -25,16 +26,17 @@ angular.module('suadeApp')
             ticknum:null,
             tickswitchfunc:null,
             positionlabel:true,
-            switchtitle:null
+            switchtitle:null,
+            width:525,
+            height:250
         };
     });
 
     $rootScope.dataMeta.identifiers.forEach(function(elem,index){
-        var chartId = 'dataTable' + index;
-        $scope[chartId] = {
+        $scope.dataTable[index] = {
             charttype: 'table',
-            chartid:'#' + chartId,
-            chartkey:$rootScope.dataMeta.identifiers[index],
+            chartid:'#data-table' + index,
+            chartkey:elem,
             xscale:null,
             xscalesort:null,
             xscaledomain:null,
@@ -44,7 +46,9 @@ angular.module('suadeApp')
             ticknum:null,
             tickswitchfunc:null,
             positionlabel:null,
-            switchtitle:null
+            switchtitle:null,
+            width:525,
+            height:250
         };
     });
 });

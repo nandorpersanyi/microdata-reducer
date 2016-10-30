@@ -4,9 +4,6 @@
                 <li ng-class="{active:$state.includes('dashboard')}" id="logo">
                     <a ui-sref="dashboard" id="logo">Upload Data</a>
                 </li>
-                <li ng-class="{active:$state.includes('suade')}">
-                    <a>Data Dashboard</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -16,14 +13,19 @@
         <div id="homepage-wrap">
             <h1 id="homepage-title">Suade Data Visualization Dashboard</h1>
             <h2 id="homepage-title">Suade Microdata Reducer</h2>
-            <span>To upload a .csv file from your computer click the upload button:</span>
+            <span>Example .csv file:</span>
+            <img src="images/microdata_example.jpg" id="microdata-example">
+            <ol>
+                <li><span>Creates a bar chart and a data table for each column and visualizes the reduced amount</span></li>
+                <li><span>Can handle a dynamic number of columns</span></li>
+                <li><span>Filter on charts</span></li>
+                <li><span>This is a pure front-end application, and it directly parses the "uploaded" local file to a Javascript object</span></li>
+            </ol>
+            <span class="upload-text">To upload a .csv file from your computer click the upload button:</span>
             <button ngf-select="upload($file)" class="upload-button">Upload file</button>
-            <div ngf-drop="uploadFiles($files)" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'">
-            <span>...or drag and drop your file here</span>
-            </div>
             <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
 
-            <p><a href="https://github.com/nandorpersanyi/microdata-reducer"><img src="images/github-logo-icon-2.png" id="github-logo"></a></p>
+            <p><a href="https://github.com/nandorpersanyi/microdata-reducer" target="_blank"><img src="images/github-logo-icon-2.png" id="github-logo"></a></p>
             <p>Links to some frameworks, libraries and modules I have used for this project:</p>
             <p><a href="https://angular.io/">https://angular.io/</a></p>
             <p><a href="https://dc-js.github.io/dc.js/">https://dc-js.github.io/dc.js/</a></p>
