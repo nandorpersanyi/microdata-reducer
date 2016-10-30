@@ -1,5 +1,5 @@
 {
-  "name": "londoncrime",
+  "name": "suadeapp",
   "version": "1.0.0",
   "dependencies": {
     "d3": "^4.3.0",
@@ -16,7 +16,7 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "londoncrimeApp",
+  "moduleName": "suadeApp",
   "overrides": {
     "bootstrap": {
       "main": [

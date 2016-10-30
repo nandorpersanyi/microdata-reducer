@@ -371,7 +371,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'londoncrimeApp',
+          module: 'suadeApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -433,13 +433,13 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          dest: 'www/londoncrime',
+          dest: 'www/suade-microdata-reducer',
           src: '**/*'
         },
         {
           expand: true,
           cwd: 'app/data',
-          dest: 'www/londoncrime/data',
+          dest: 'www/suade-microdata-reducer/data',
           src: '**/*'
         }]
       }

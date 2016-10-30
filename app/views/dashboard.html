@@ -13,13 +13,14 @@
         <div id="homepage-wrap">
             <h1 id="homepage-title">Suade Data Visualization Dashboard</h1>
             <h2 id="homepage-title">Suade Microdata Reducer</h2>
-            <span>Example .csv file:</span>
+            <span>Example .csv file (avoid using unique identifiers):</span>
             <img src="images/microdata_example.jpg" id="microdata-example">
             <ol>
-                <li><span>Creates a bar chart and a data table for each column and visualizes the reduced amount</span></li>
+                <li><span>Creates a bar chart and a data table for each column and visualizes the reduced amount of each value</span></li>
                 <li><span>Can handle a dynamic number of columns</span></li>
-                <li><span>Filter on charts</span></li>
+                <li><span>Filter on charts (click on the chart bars to filter)</span></li>
                 <li><span>This is a pure front-end application, and it directly parses the "uploaded" local file to a Javascript object</span></li>
+                <li><span>Download a sample microdata csv file: <a href="http://web.nandorpersanyi.com/suade-microdata-reducer/data/microdata_sample.csv">microdata_sample.csv</a></span></li>
             </ol>
             <span class="upload-text">To upload a .csv file from your computer click the upload button:</span>
             <button ngf-select="upload($file)" class="upload-button">Upload file</button>

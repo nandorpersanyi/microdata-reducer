@@ -87,12 +87,7 @@ angular.module('suadeApp')
                         .renderHorizontalGridLines(true)
                         .mouseZoomable(false);
                 }
-                /*if(switchTitle === 'switchOutcome')
-                    chartVar.title(function (d){ return switchOutcome(d.key) + ': ' + d.value; });
-                if(switchTitle === 'switchIdentified'){
-                    chartVar.label(function (d){ return switchIdentified(d.key); });
-                    chartVar.title(function (d){ return switchIdentified(d.key) + ': ' + d.value; });
-                }*/
+
                 if(chartType === 'pie')
                     chartVar.innerRadius(30);
                 if(chartType === 'bar')
@@ -101,8 +96,6 @@ angular.module('suadeApp')
                     chartVar.centerBar(true);
                 if(event) 
                     chartVar.on(event, eventFunc);
-                /*if(tickSwitchFunc === 'switchOutcome') 
-                    chartVar.xAxis().ticks(tickNum).tickFormat(switchOutcome);*/
                 if(renderletFunc)
                     chartVar.renderlet(positionLabels);
 
@@ -177,26 +170,7 @@ angular.module('suadeApp')
 
             //Chart reStyling >>
             var yAxisLabel = 'Number of Offences';
-            $scope.alignChart = function(chartId,moveX,moveY,brush){
-                var chartBody = d3.transform(d3.select(chartId +' .chart-body').attr("transform")),
-                    chartBodyX = chartBody.translate[0] + moveX,
-                    chartBodyY = chartBody.translate[1] + moveY;
-                d3.select(chartId +' .chart-body').attr("transform","translate("+chartBodyX+","+chartBodyY+")");
-                var chartAxisXy = d3.transform(d3.select(chartId +' .axis.x').attr("transform")),
-                    chartAxisXyX = chartAxisXy.translate[0] + moveX,
-                    chartAxisXyY = chartAxisXy.translate[1] + moveY;
-                d3.select(chartId +' .axis.x').attr("transform","translate("+chartAxisXyX+","+chartAxisXyY+")");
-                var chartAxisXx = d3.transform(d3.select(chartId +' .axis.y').attr("transform")),
-                    chartAxisXxX = chartAxisXx.translate[0] + moveX,
-                    chartAxisXxY = chartAxisXx.translate[1] + moveY;
-                d3.select(chartId +' .axis.y').attr("transform","translate("+chartAxisXxX+","+chartAxisXxY+")");
-                if(brush){
-                    var chartAxisBrush = d3.transform(d3.select(chartId +' .brush').attr("transform")),
-                        chartAxisBrushX = chartAxisBrush.translate[0] + moveX,
-                        chartAxisBrushY = chartAxisBrush.translate[1] + moveY;
-                    d3.select(chartId +' .brush').attr("transform","translate("+chartAxisBrushX+","+chartAxisBrushY+")");
-                }
-            }
+            
             function positionLabels(chart){
                 chart.selectAll("g.x text")
                     .attr('transform', "rotate(90)")
